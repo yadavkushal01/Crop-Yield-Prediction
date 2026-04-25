@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction API</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/style.css') }}"></link>
+     
+</head>
+<body>
+    <div class="login">
+        <h1>Crop Prediction Model</h1>
+        <form action="/predict" method="post">
+            <input type="text" name="Nitrogen" placeholder="Nitrogen" required="required"> <br>
+            <input type="text" name="Phosphorus" placeholder="Phosphorus" required="required"> <br>
+            <input type="text" name="Potassium" placeholder="Potassium" required="required"> <br>
+            <input type="text" name="Temperature" placeholder="Temperature" required="required"> <br>
+            <input type="text" name="Humidity" placeholder="Humidity" required="required"> <br>
+            <input type="text" name="ph" placeholder="Ph" required="required"> <br>
+            <input type="text" name="Rainfall" placeholder="Rainfall" required="required"> <br>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+    </div>
+    <h2 class="predi">
+        {{ predicted_text }}
+    </h2>
+
+</body>
+</html>
